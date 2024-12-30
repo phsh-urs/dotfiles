@@ -164,11 +164,11 @@ bindsym $mod+Shift+backslash exec --no-startup-id $HOME/dotfiles/i3/reminder-dan
 
 # open[o] {{{
 mode "exec" {
-  bindsym e exec firefox &, mode "default" 
+  bindsym e exec TZ=UTC firefox &, mode "default" 
   # bindsym $mod+e exec firefox &, mode "default"
   bindsym g exec geogebra &, mode "default" 
-  bindsym p exec firefox --private-window &, mode "default"
-  bindsym w exec firefox --new-window https://web.whatsapp.com
+  bindsym p exec TZ=UTC firefox --private-window &, mode "default"
+  bindsym w exec TZ=UTC firefox --new-window https://web.whatsapp.com
   bindsym z exec zathura &; mode "default" 
 
   bindsym Escape mode "default" 
