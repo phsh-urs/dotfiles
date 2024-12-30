@@ -1,0 +1,12 @@
+mode "ponymix" {
+  # volume
+  bindsym k exec --no-startup-id $HOME/dotfiles/sh-scripts/chvol.sh k 
+  bindsym j exec --no-startup-id $HOME/dotfiles/sh-scripts/chvol.sh j 
+  bindsym m exec --no-startup-id $HOME/dotfiles/sh-scripts/chvol.sh m 
+  bindsym w exec --no-startup-id $HOME/dotfiles/sh-scripts/chvol.sh w 
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# vim: ft=i3config fdm=marker textwidth=0
