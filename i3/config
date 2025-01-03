@@ -167,9 +167,10 @@ mode "exec" {
   bindsym e exec TZ=UTC firefox &, mode "default" 
   # bindsym $mod+e exec firefox &, mode "default"
   bindsym g exec geogebra &, mode "default" 
-  bindsym p exec TZ=UTC firefox --private-window &, mode "default"
+  bindsym p exec TZ=UTC librewolf --private-window &, mode "default"
   bindsym w exec TZ=UTC firefox --new-window https://web.whatsapp.com
   bindsym z exec zathura &; mode "default" 
+  bindsym l exec TZ=UTC librewolf &; mode "default"
 
   bindsym Escape mode "default" 
   bindsym Return mode "default"

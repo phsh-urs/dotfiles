@@ -5,5 +5,5 @@ notify-send "i3: exec mode" \
   -u low \
   "<b>e</b>: firEfox          <b>g</b>: Geogebra
 <b>p</b>: Priv firefox	  <b>w</b>: Whatsapp	
-<b>z</b>:  Zathura
+<b>z</b>:  Zathura	  <b>l</b>: Librewolf
 "
