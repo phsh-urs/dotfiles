@@ -182,6 +182,9 @@ bindsym $mod+o exec --no-startup-id $HOME/dotfiles/i3/reminder-exec.sh, mode "ex
   bindsym $mod+u exec --no-startup-id $HOME/dotfiles/i3/reminder-ponymix.sh, mode "ponymix"
 #}}}
 
+# Clipboard [p] {{{
+include ~/dotfiles/i3/modes/clipboard 
+
 # misc commands {{{
   # start a terminal
   bindsym $mod+Return exec i3-sensible-terminal
@@ -258,3 +261,4 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# vim: ft=i3config fdm=marker textwidth=0
