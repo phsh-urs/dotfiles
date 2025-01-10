@@ -5,6 +5,9 @@
 # swap alt and win key(to use win as a mod for i3)
 setxkbmap -model pc104 -layout us -variant dvorak -option altwin:swap_ralt_rwin
 
+# make sure audio output is muted
+ponymix mute
+
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
