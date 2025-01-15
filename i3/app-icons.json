@@ -3,7 +3,7 @@
     "librewolf": "firefox", 
     "VIM": "edit",
     "feh": "camera",
-    "firefox": "firefox",
+    "firefox": "firefox-browser",
     "geogebra": "drafting-compass",
     "terminal - .* - VIM": "code",
     "terminal - vim .*": "code",
