@@ -1,0 +1,13 @@
+{
+    "alacritty": "terminal",
+    "librewolf": "firefox", 
+    "VIM": "edit",
+    "feh": "camera",
+    "firefox": "firefox",
+    "geogebra": "drafting-compass",
+    "terminal - .* - VIM": "code",
+    "terminal - vim .*": "code",
+    "x-terminal-emulator": "digital-tachograph",
+    "zathura" : "book-reader",
+    "_no_match": "question"
+}

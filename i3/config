@@ -234,4 +234,9 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id dex -ae i3 &
 exec --no-startup-id $HOME/dotfiles/sh-scripts/startup.sh
 
+# i3-workspace-names-daemon setup
+# NOTE: requires i3ipc installed via pip to run
+exec_always --no-startup-id exec $HOME/dotfiles/i3/i3-workspace-names-daemon/i3_workspace_names_daemon.py -n -d " " -l 12
+
+
 # vim: ft=i3config fdm=marker textwidth=0
