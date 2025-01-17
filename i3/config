@@ -177,7 +177,7 @@ include ~/dotfiles/i3/modes/clipboard
 
 # misc commands {{{
   # start a terminal
-  bindsym $mod+Return exec i3-sensible-terminal
+  bindsym $mod+Return exec alacritty
 
   # start rofi replacement for dmenu (a program launcher)
   bindsym $mod+d exec --no-startup-id rofi -modi drun#run -show drun 
