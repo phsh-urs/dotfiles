@@ -3,6 +3,15 @@
 # set modifier key, currently Super(Mod4)
 set $mod Mod4
 
+# set dvorak and swap ralt and rwin
+input * {
+    xkb_layout "us"
+    xkb_variant "dvorak"
+    xkb_options "altwin:swap_ralt_rwin"
+}
+
+input "system-keyboard" xkb_model "pc104"
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
