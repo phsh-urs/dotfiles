@@ -37,7 +37,7 @@ scratchpad{
 }
 wireless _first_ {
   format_up = "📡%quality"
-  format_down = "📡無接"
+  format_down = " OFF"
   color_good = "#00CCA7"
 }
 
