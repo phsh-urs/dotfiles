@@ -3,6 +3,7 @@
 # set modifier key, currently Super(Mod4)
 set $mod Mod4
 
+# input {{{
 # set dvorak and swap ralt and rwin
 input * {
     xkb_layout "us"
@@ -11,6 +12,10 @@ input * {
 }
 
 input "system-keyboard" xkb_model "pc104"
+# }}}
+
+# set background 
+output "*" bg $HOME/.background fill
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -186,7 +191,7 @@ bindsym $mod+o mode "exec"
 
 # misc commands {{{
   # start a terminal
-  bindsym $mod+Return exec alacritty
+  bindsym $mod+Return exec alacritty --config-file ~/dotfiles/alacritty/alacritty.toml.sway
 
   # start rofi replacement for dmenu (a program launcher)
   # bindsym $mod+d exec --no-startup-id rofi -modi drun#run -show drun 
