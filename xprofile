@@ -4,13 +4,9 @@
 # make sure audio output is muted
 ponymix mute
 
-# start some nice programs
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
+# sreen saving parameters 
+xset s 900 30
+xset dpms 600 600 600     
 
 # Load background image if not existed
 [[ -f ~/.fehbg ]] && source ~/.fehbg 
