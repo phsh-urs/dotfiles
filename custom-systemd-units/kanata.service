@@ -1,0 +1,13 @@
+[Unit]
+Description=Kanata Service
+Documentation=https://github.com/jtroo/kanata
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+ExecStartPre=/usr/bin/modprobe uinput
+ExecStart=/usr/bin/kanata -c /home/urss/dotfiles/kanata/main.kbd
+Restart=no
+
+[Install]
+WantedBy=sysinit.target

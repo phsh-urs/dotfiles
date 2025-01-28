@@ -1,0 +1,104 @@
+;;;;;;;;;;;;;;;;;; HOME-ROW MODS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;; Implement home-row mods at a dvorak layout
+;; the goal was to implement urob's timerless home-row mods(https://github.com/urob/zmk-config) in a normal keyboard
+;; the implementation is taken from https://github.com/jtroo/kanata/blob/main/cfg_samples/home-row-mod-advanced.kbd
+;; Specifications:
+;; - when a home row mod activates tap, the home row mods are disabled
+;;   while continuing to type rapidly
+;; - tap-hold-release helps make the hold action more responsive
+;; - pressing another key on the same half of the keyboard
+;;   as the home row mod will activate an early tap action
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+)
+
+(deffakekeys
+  to-base (layer-switch base)
+)
+
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index
+  ;; fingers faster.
+  tap-time 175
+  hold-time 500
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+
+(defalias
+  ;; alias to cancel tap-hold keys if typing rapidly but restore after a shord idle period
+tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 150)
+  )
+
+  ;; ACSG home-row mods
+  a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lalt $left-hand-keys)
+  o (tap-hold-release-keys $tap-time $hold-time (multi o @tap) lctl $left-hand-keys)
+  e (tap-hold-release-keys $tap-time $hold-time (multi e @tap) lsft $left-hand-keys)
+  u (tap-hold-release-keys $tap-time $hold-time (multi u @tap) lmet $left-hand-keys)
+  h (tap-hold-release-keys $tap-time $hold-time (multi h @tap) rmet $right-hand-keys)
+  t (tap-hold-release-keys $tap-time $hold-time (multi t @tap) rsft $right-hand-keys)
+  n (tap-hold-release-keys $tap-time $hold-time (multi n @tap) rctl $right-hand-keys)
+  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) ralt $right-hand-keys)
+
+  esc_nomods (multi esc (layer-switch base) )
+  ret_nomods (multi ret (layer-switch base) )
+
+  ' (multi ' @tap)
+  , (multi , @tap)
+  p (multi p @tap)
+  y (multi y @tap)
+  f (multi f @tap)
+  g (multi g @tap)
+  c (multi c @tap)
+  r (multi r @tap)
+  l (multi l @tap)
+  / (multi / @tap)
+  i (multi i @tap)
+  d (multi d @tap)
+  - (multi - @tap)
+  ; (multi ; @tap)
+  q (multi q @tap)
+  j (multi j @tap)
+  k (multi k @tap)
+  x (multi x @tap)
+  b (multi b @tap)
+  m (multi m @tap)
+  w (multi w @tap)
+  v (multi v @tap)
+  z (multi z @tap)
+  . (multi . @tap)
+)
+
+(deflayer base
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  @'    @,    @.    @p    @y    @f    @g    @c    @r    @l    @/    =    \
+  esc @a    @o    @e    @u    @i    @d    @h    @t    @n    @s    @-   ret
+  lsft @;    @q    @j    @k    @x    @b    @m    @w    @v    @z    rsft
+)
+
+(deflayer nomods
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  @esc_nomods  a    o    e    u    i    d    h    t    n    s    -   @ret_nomods
+  lsft ;    q    j    k    x    b    m    w    v    z    rsft
+)
