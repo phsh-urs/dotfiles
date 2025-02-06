@@ -39,7 +39,4 @@ i3lock \
 dunstctl set-paused false
 xset dpms 900 900 900
 picom -b --no-fading-openclose
-
-if pgrep -U "$(whoami)" py3status >/dev/null; then
-  killall -s USR1 py3status
-fi
+i3-msg restart
