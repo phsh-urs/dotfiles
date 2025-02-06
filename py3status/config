@@ -27,7 +27,7 @@ clock {
 
 volume_status master {
   format = "📢{percentage}%"
-  format_muted = "🔇 mudo"
+  format_muted = "🔇:OFF"
   is_input = false
   thresholds = [(0, '#bbbbbb'), (30, '#aaddff'), (60, '#ccffff')]
   color_bad = "#9955FF"
@@ -35,6 +35,11 @@ volume_status master {
 
 scratchpad{
 }
+
+sysdata {
+  format = "[\?color=cpu_used_percent 🧠{cpu_used_percent:d}%]-[\?color=mem_used_percent 📝{mem_used_percent:d}%]"
+}
+
 wireless _first_ {
   format_up = "📡%quality"
   format_down = " OFF"
@@ -45,9 +50,9 @@ battery all {
         format = "%status %percentage %remaining"
 }
 
-#order += "ipv6"
 order += "scratchpad"
 order += "battery_level"
+order += "sysdata"
 order += "wireless _first_"
 order += "volume_status master"
 order += "clock"
