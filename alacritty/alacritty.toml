@@ -24,3 +24,9 @@ style = "Regular"
 # make terminal transparent 
 [window]
 opacity = 0.85000
+
+# keybinding for spawning a new instance of the terminal in the same directory
+[keyboard]
+bindings = [
+   { key = "Return", mods = "Alt", action = "SpawnNewInstance" }
+]
