@@ -99,9 +99,19 @@ function fish_mode_prompt
 end
 # }}}
 
+# Exports {{{
+export SHELL='/usr/bin/fish'
+export EDITOR='vim'
+if test -f /usr/bin/zathura
+    export PDFVIEWER='zathura'
+end
+# }}}
+
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         exec startx -- -keeptty
     end
 end
+
+# vim: fdm=marker
