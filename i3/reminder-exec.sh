@@ -1,6 +1,6 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
-notify-send "i3: exec mode" \
+notify-send "i3: exec mode" -i "categories/applications-utilities-symbolic" \
   -t 4000 \
   -u low \
   "<b>e</b>: firEfox          <b>g</b>: Geogebra
