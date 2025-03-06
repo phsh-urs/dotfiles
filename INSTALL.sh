@@ -24,11 +24,11 @@ if ! test -f "$HOME/.config/picom.conf"; then
 fi
 if ! test -d "$HOME/.config/py3status"; then
   mkdir -p "$HOME"/.config/py3status
-  ln -s "$HOME/dotfiles/py3status/py3status.conf" "$HOME"/.config/py3status/config
+  ln -s "$HOME/dotfiles/py3status/config" "$HOME"/.config/py3status/config
 fi
 if ! test -d "$HOME/.config/alacritty"; then
   mkdir -p "$HOME"/.config/alcritty/
-  ln -s "$HOME"/dotfiles/terminal "$HOME"/.config/xfce4/terminal
+  ln -s "$HOME"/dotfiles/alacritty "$HOME"/.config/alacritty
 fi
 if ! test -f "$HOME/.config/redshift/redshift.conf"; then
   mkdir -p "$HOME"/.config/redshift/
