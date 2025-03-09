@@ -22,6 +22,6 @@ fi
 if [ "$1" = w ]; then
   notify-send -i "status/audio-volume-low-symbolic" \
     "Global volume unmuted" \
-    "Microphone volume is $(ponymix unmute)%" -t "$time"
+    "Global volume is $(ponymix unmute)%" -t "$time"
 fi
 
