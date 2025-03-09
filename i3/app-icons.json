@@ -9,5 +9,6 @@
     "terminal - vim .*": "code",
     "x-terminal-emulator": "digital-tachograph",
     "zathura" : "book-reader",
+    "zoom" : "video",
     "_no_match": "question"
 }
