@@ -24,6 +24,34 @@ set __fish_git_prompt_color_branch 00CCA7
 set __fish_git_prompt_color_upstream_ahead green
 set __fish_git_prompt_color_upstream_behind red
 
+function fish_greeting
+    set_color --italics $fish_color_greeting
+    printf "Hello "
+    set_color --bold $fish_color_name
+    printf $USER
+    set_color normal
+    set_color --italics $fish_color_host
+    printf @
+    printf (hostname)
+    set_color $fish_color_greeting
+    printf "! You are filled with "
+    set_color --bold $fish_color_determination
+    printf determination
+    set_color normal
+    set_color --italics $fish_color_greeting
+    printf ".\n"
+
+    if test (pwd) = "$HOME"
+        archey3 --config ~/dotfiles/archey3.cfg --color=green 2>/dev/null
+    end
+
+    set_color --italics $fish_color_date
+    printf "It is "
+    printf (date +'%a %d %b %Y, %R %Z')
+    printf ".\n"
+    set_color normal
+end
+
 function fish_prompt
     set last_status $status
     if set -q SUDO_USER
@@ -115,3 +143,5 @@ if status is-login
 end
 
 # vim: fdm=marker
+
+
