@@ -135,6 +135,10 @@ if test -f /usr/bin/zathura
 end
 # }}}
 
+# Drop-in replacements {{{
+alias ls='eza --color --icons=auto'
+# }}}
+
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
