@@ -137,6 +137,9 @@ end
 
 # Drop-in replacements {{{
 alias ls='eza --color --icons=auto'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 # }}}
 
 # Start X at login
