@@ -5,6 +5,30 @@ set nocompatible
 syntax on
 filetype indent on
 
+" {{{ Plugins 
+if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
+	call plug#begin('~/.vim/plugged')
+	Plug 'vim-python/python-syntax',	{ 'for' : 'python' }
+	Plug 'mboughaba/i3config.vim',		{ 'for' : 'i3config' }
+	Plug 'dag/vim-fish',			{ 'for' : 'fish' }
+	Plug 'ciaranm/detectindent'				
+endif
+
+" }}}
+
+" A million settings for addons {{{
+
+let g:python_highlight_all = 1
+
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
+let g:detectindent_preferred_when_mixed = 1
+
+if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
+	call plug#end()
+endif
+" }}}
+
 " Settings {{{
 
 " smarter linebreaks
@@ -13,7 +37,7 @@ set breakindent
 
 set number
 set relativenumber
-set spell
+" set spell
 set incsearch " search tweaks
 set hlsearch
 set hidden "allow hiding a buffer
