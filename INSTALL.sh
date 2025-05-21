@@ -43,6 +43,14 @@ fi
 #  ln -s "$HOME"/dotfiles/zprofile "$HOME"/.zprofile
 #fi
 
+# vim 
+if ! test -d "$HOME/.vim/colors"; then
+  ln -s "$HOME"/dotfiles/vim/colors "$HOME"/.vim/colors
+fi
+
+if ! test -f "$HOME/.vim/vimrc"; then
+  ln -s "$HOME"/dotfiles/vim/vimrc "$HOME"/.vim/vimrc
+fi
 if ! test -f "$HOME/.vimrc"; then
-  ln -s "$HOME"/dotfiles/vimrc "$HOME"/.vimrc
+  ln -s "$HOME"/dotfiles/vim/vimrc "$HOME"/.vimrc
 fi
