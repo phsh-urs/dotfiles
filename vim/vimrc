@@ -2,6 +2,7 @@
 
 set nocompatible
 
+colorscheme reclipse
 syntax on
 filetype indent on
 
