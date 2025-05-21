@@ -67,5 +67,7 @@ nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 set noerrorbells visualbell t_vb=
 
 " remove esckeys because of lag and weird behaviour
-set noesckeys
+if !has('nvim')
+	set noesckeys
+endif
 " vim: ft=vim fdm=marker
