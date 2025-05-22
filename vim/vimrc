@@ -13,6 +13,9 @@ if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	Plug 'mboughaba/i3config.vim',		{ 'for' : 'i3config' }
 	Plug 'dag/vim-fish',			{ 'for' : 'fish' }
 	Plug 'ciaranm/detectindent'				
+
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 endif
 
 " }}}
@@ -24,6 +27,7 @@ let g:python_highlight_all = 1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 let g:detectindent_preferred_when_mixed = 1
+let g:airline_theme='wombat'
 
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	call plug#end()
