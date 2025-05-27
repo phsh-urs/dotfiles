@@ -129,13 +129,16 @@ end
 
 # Exports {{{
 export SHELL='/usr/bin/fish'
-export EDITOR='vim'
+export EDITOR='nvim'
 if test -f /usr/bin/zathura
     export PDFVIEWER='zathura'
 end
 # }}}
 
 # Drop-in replacements {{{
+if test -f /usr/bin/nvim
+	alias vim=nvim
+end
 alias ls='eza --color --icons=auto'
 alias rm='rm -i'
 alias cp='cp -i'
