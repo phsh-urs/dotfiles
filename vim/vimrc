@@ -16,6 +16,11 @@ if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'dense-analysis/ale'
+
+	if has('nvim')
+		Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	endif
 endif
 
 " }}}
@@ -28,6 +33,10 @@ let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 let g:detectindent_preferred_when_mixed = 1
 let g:airline_theme='wombat'
+
+"ALE + CoC
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], } "by default
+let g:ale_fix_on_save = 1
 
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	call plug#end()
