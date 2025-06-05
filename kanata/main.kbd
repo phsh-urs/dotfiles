@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;; HOME-ROW MODS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;; HOME-ROW MODS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Implement home-row mods at a dvorak layout
 ;; the goal was to implement urob's timerless home-row mods(https://github.com/urob/zmk-config) in a normal keyboard
 ;; the implementation is taken from https://github.com/jtroo/kanata/blob/main/cfg_samples/home-row-mod-advanced.kbd
@@ -18,6 +18,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
+       lmet lalt
 )
 
 (deffakekeys
@@ -51,14 +52,14 @@ tap (multi
   )
 
   ;; ACSG home-row mods
-  a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lalt $left-hand-keys)
-  o (tap-hold-release-keys $tap-time $hold-time (multi o @tap) lctl $left-hand-keys)
-  e (tap-hold-release-keys $tap-time $hold-time (multi e @tap) lsft $left-hand-keys)
-  u (tap-hold-release-keys $tap-time $hold-time (multi u @tap) lmet $left-hand-keys)
-  h (tap-hold-release-keys $tap-time $hold-time (multi h @tap) rmet $right-hand-keys)
-  t (tap-hold-release-keys $tap-time $hold-time (multi t @tap) rsft $right-hand-keys)
-  n (tap-hold-release-keys $tap-time $hold-time (multi n @tap) rctl $right-hand-keys)
-  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) ralt $right-hand-keys)
+  a (tap-hold-release $tap-time $hold-time (multi a @tap) lalt )
+  o (tap-hold-release $tap-time $hold-time (multi o @tap) lctl )
+  e (tap-hold-release $tap-time $hold-time (multi e @tap) lsft )
+  i (tap-hold-release $tap-time $hold-time (multi i @tap) lmet )
+  h (tap-hold-release $tap-time $hold-time (multi h @tap) rmet )
+  t (tap-hold-release $tap-time $hold-time (multi t @tap) rsft )
+  n (tap-hold-release $tap-time $hold-time (multi n @tap) rctl )
+  s (tap-hold-release $tap-time $hold-time (multi s @tap) ralt )
 
   esc_nomods (multi esc (layer-switch base) )
   ret_nomods (multi ret (layer-switch base) )
@@ -73,7 +74,7 @@ tap (multi
   r (multi r @tap)
   l (multi l @tap)
   / (multi / @tap)
-  i (multi i @tap)
+  u (multi u @tap)
   d (multi d @tap)
   - (multi - @tap)
   ; (multi ; @tap)
@@ -91,14 +92,16 @@ tap (multi
 
 (deflayer base
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  @'    @,    @.    @p    @y    @f    @g    @c    @r    @l    @/    =    \
-  esc @a    @o    @e    @u    @i    @d    @h    @t    @n    @s    @-   ret
-  lsft @;    @q    @j    @k    @x    @b    @m    @w    @v    @z    rsft
+  tab  @'    @,    @.    @p    @y    @f    @g    @c    @r    @l    ret    /   \
+  esc @a    @o    @e    @i    @u    @d    @h    @t    @n    @s    @-   =
+  / @;    @q    @j    @k    @x    @b    @m    @w    @v    @z	rsft
+       mrgt  mlft
 )
 
 (deflayer nomods
   grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
-  @esc_nomods  a    o    e    u    i    d    h    t    n    s    -   @ret_nomods
-  lsft ;    q    j    k    x    b    m    w    v    z    rsft
+  tab  '    ,    .    p    y    f    g    c    r    l    @ret_nomods    /    \
+  @esc_nomods  a    o    e    i    u    d    h    t    n    s    -   =
+  / ;    q    j    k    x    b    m    w    v    z    rsft
+        mrgt mlft
 )
