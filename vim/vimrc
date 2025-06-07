@@ -6,13 +6,13 @@ colorscheme reclipse
 syntax on
 filetype indent on
 
-" {{{ Plugins 
+" {{{ Plugins
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	call plug#begin('~/.vim/plugged')
 	Plug 'vim-python/python-syntax',	{ 'for' : 'python' }
 	Plug 'mboughaba/i3config.vim',		{ 'for' : 'i3config' }
 	Plug 'dag/vim-fish',			{ 'for' : 'fish' }
-	Plug 'ciaranm/detectindent'				
+	Plug 'ciaranm/detectindent'
 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -37,6 +37,11 @@ let g:airline_theme='wombat'
 "ALE + CoC
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], } "by default
 let g:ale_fix_on_save = 1
+let g:coc_global_extensions = [
+	\ 'coc-python',
+	\ 'coc-sh',
+	\ 'coc-vimtex',
+	\ ]
 
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	call plug#end()
@@ -46,7 +51,7 @@ endif
 " Settings {{{
 
 " smarter linebreaks
-set linebreak 
+set linebreak
 set breakindent
 
 set number
