@@ -136,14 +136,21 @@ end
 # }}}
 
 # Drop-in replacements {{{
-if test -f /usr/bin/nvim
-	alias vim=nvim
-end
+#if test -f /usr/bin/nvim
+#	alias vim=nvim
+#end
 alias ls='eza --color --icons=auto'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 # }}}
+# Abbreviations {{{
+abbr --add n --position command nvim
+abbr --add py --position command python3
+abbr --add c --position command cd
+abbr --add h --position command zathura
+# }}}
+
 
 # Start X at login
 if status is-login
@@ -153,5 +160,3 @@ if status is-login
 end
 
 # vim: fdm=marker
-
-
