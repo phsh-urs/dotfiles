@@ -17,6 +17,7 @@ if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'dense-analysis/ale'
+	Plug 'lervag/vimtex'
 
 	if has('nvim')
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
