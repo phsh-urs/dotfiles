@@ -154,6 +154,7 @@ bindsym $mod+Shift+backslash exec --no-startup-id $HOME/dotfiles/i3/reminder-dan
 # open[o] {{{
 mode "exec" {
   bindsym e exec TZ=UTC firefox &, mode "default"
+  bindsym d exec discord &, mode "default"
   # bindsym $mod+e exec firefox &, mode "default"
   bindsym g exec geogebra &, mode "default"
   bindsym p exec TZ=UTC librewolf --private-window &, mode "default"
