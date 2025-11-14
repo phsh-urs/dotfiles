@@ -8,7 +8,7 @@ floating_modifier $mod
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 14 
+font pango:DejaVu Sans Mono 14
 
 # Settings
 focus_follows_mouse no
@@ -30,10 +30,10 @@ bar {
     separator #00cca7
 
     # <colorclass>    <border> <background> <text>
-    focused_workspace  #4c7899 #289977 #fefefe 
-    active_workspace   #333333 #333388 #dddddd 
-    inactive_workspace #0099bb #121212 #cdcdcd 
-    urgent_workspace   #2f343a #900000 #ffffff 
+    focused_workspace  #4c7899 #289977 #fefefe
+    active_workspace   #333333 #333388 #dddddd
+    inactive_workspace #0099bb #121212 #cdcdcd
+    urgent_workspace   #2f343a #900000 #ffffff
  }
 }
 #}}}
@@ -136,7 +136,7 @@ mode "close" {
   bindsym z mode "default"
 }
 # }}}
-      
+
 
 # power mode [shift+backslash] {{{
 mode "danger" {
@@ -153,15 +153,15 @@ bindsym $mod+Shift+backslash exec --no-startup-id $HOME/dotfiles/i3/reminder-dan
 
 # open[o] {{{
 mode "exec" {
-  bindsym e exec TZ=UTC firefox &, mode "default" 
+  bindsym e exec TZ=UTC firefox &, mode "default"
   # bindsym $mod+e exec firefox &, mode "default"
-  bindsym g exec geogebra &, mode "default" 
+  bindsym g exec geogebra &, mode "default"
   bindsym p exec TZ=UTC librewolf --private-window &, mode "default"
   bindsym w exec TZ=UTC firefox --new-window https://web.whatsapp.com &, mode "default"
-  bindsym z exec zathura &; mode "default" 
+  bindsym z exec zathura &; mode "default"
   bindsym l exec TZ=UTC librewolf &; mode "default"
 
-  bindsym Escape mode "default" 
+  bindsym Escape mode "default"
   bindsym Return mode "default"
 }
 bindsym $mod+o exec --no-startup-id $HOME/dotfiles/i3/reminder-exec.sh, mode "exec"
@@ -173,15 +173,17 @@ bindsym $mod+o exec --no-startup-id $HOME/dotfiles/i3/reminder-exec.sh, mode "ex
 #}}}
 
 # Clipboard [p] {{{
-include ~/dotfiles/i3/modes/clipboard 
+include ~/dotfiles/i3/modes/clipboard
 # }}}
 
 # misc commands {{{
   # start a terminal
   bindsym $mod+Return exec alacritty
+  bindsym $mod+w exec --no-startup-id rofi -modi window -show
+  bindsym $mod+space exec --no-startup-id rofi -modi drun#run -show drun -show-icons
 
   # start rofi replacement for dmenu (a program launcher)
-  bindsym $mod+d exec --no-startup-id rofi -modi drun#run -show drun 
+  bindsym $mod+d exec --no-startup-id rofi -modi drun#run -show drun
  # }}}
 
 # switch to workspace 0-10 {{{
@@ -231,7 +233,7 @@ bindsym $mod+r mode "resize"
 # }}}
 
 
-# Exec startup 
+# Exec startup
 exec --no-startup-id dex -ae i3 &
 exec --no-startup-id $HOME/dotfiles/sh-scripts/startup.sh
 
