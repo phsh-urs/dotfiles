@@ -1,0 +1,33 @@
+snippet ( "Left/right parens" i
+\left( ${1:(Content)} \right) $0
+endsnippet
+snippet [ "Left/right brackets" i
+\left[ ${1:<+Content+>} \right] $0
+endsnippet
+snippet { "Left/right curly braces" i
+\left\\{ ${1:(Content)} \right\\} $0
+endsnippet
+snippet < "Left/right angle brackets" i
+\left\langle ${1:<+Content+>} \right\rangle $0
+endsnippet
+snippet | "Left/right absolute value" i
+\left\lvert ${1:(Content)} \right\rvert $0
+endsnippet
+
+snippet floor "Floor" i
+\left\lfloor ${1:<+Content+>} \right\rfloor$0
+endsnippet
+snippet ceil "Ceiling" i
+\left\lceil ${1:<+Content+>} \right\rceil$0
+endsnippet
+
+snippet cases "Cases function" i
+\begin{cases}
+  ${1:<+Cases+>}
+\end{cases}
+$0
+endsnippet
+
+snippet fr "Fraction" i
+\frac{${1:<+Numerator+>}}{${2:Denominator}}$0
+endsnippet

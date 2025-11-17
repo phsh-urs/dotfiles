@@ -17,6 +17,7 @@ if ! test -d "$HOME/.config/dunst"; then ln -s "$HOME"/dotfiles/dunst "$HOME"/.c
 if ! test -d "$HOME/.config/fish"; then ln -s "$HOME"/dotfiles/fish "$HOME"/.config/fish; fi
 if ! test -d "$HOME/.config/i3"; then ln -s "$HOME"/dotfiles/i3 "$HOME"/.config/i3; fi
 if ! test -d "$HOME/.config/zathura"; then ln -s "$HOME"/dotfiles/zathura "$HOME"/.config/zathura; fi
+if ! test -d "$HOME/.config/rofi"; then ln -s "$HOME"/dotfiles/rofi "$HOME"/.config/rofi; fi
 
 # nested config
 if ! test -f "$HOME/.config/picom.conf"; then
@@ -43,7 +44,7 @@ fi
 #  ln -s "$HOME"/dotfiles/zprofile "$HOME"/.zprofile
 #fi
 
-# vim 
+# vim
 if ! test -d "$HOME/.vim/colors"; then
   ln -s "$HOME"/dotfiles/vim/colors "$HOME"/.vim/colors
 fi
@@ -53,4 +54,7 @@ if ! test -f "$HOME/.vim/vimrc"; then
 fi
 if ! test -f "$HOME/.vimrc"; then
   ln -s "$HOME"/dotfiles/vim/vimrc "$HOME"/.vimrc
+fi
+if ! test -d "$HOME/.vim/snips"; then
+  ln -s "$HOME"/dotfiles/vim/snips "$HOME"/.vim/snips
 fi

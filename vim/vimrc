@@ -19,6 +19,8 @@ if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	Plug 'dense-analysis/ale'
 	Plug 'lervag/vimtex'
 
+	Plug 'SirVer/ultisnips'
+
 	if has('nvim')
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	endif
@@ -43,6 +45,7 @@ let g:coc_global_extensions = [
 	\ 'coc-sh',
 	\ 'coc-vimtex',
 	\ ]
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/snips/']
 
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	call plug#end()
