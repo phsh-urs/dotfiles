@@ -4,7 +4,7 @@ set nocompatible
 
 colorscheme reclipse
 syntax on
-filetype indent on
+filetype plugin indent on
 
 " {{{ Plugins
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
@@ -67,6 +67,7 @@ set hidden "allow hiding a buffer
 set ignorecase
 set smartcase
 set mouse+=a "mouse enabled
+set noshowmode "apparently I do not this with airline
 
 " }}}
 " Disable the default Vim startup message.
