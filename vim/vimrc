@@ -1,6 +1,7 @@
 " ursino's .vimrc
 
 set nocompatible
+scriptencoding 'utf-8'
 
 colorscheme reclipse
 syntax on
@@ -18,6 +19,7 @@ if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'dense-analysis/ale'
 	Plug 'lervag/vimtex'
+	Plug 'airblade/vim-gitgutter'
 
 	Plug 'SirVer/ultisnips'
 
@@ -33,18 +35,32 @@ endif
 let g:python_highlight_all = 1
 
 let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 4
+let g:detectindent_preferred_indent = 2
 let g:detectindent_preferred_when_mixed = 1
 let g:airline_theme='wombat'
 
 "ALE + CoC
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%severity%] [%linter%] %s'
+let g:ale_echo_msg_warning_str = 'W'
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], } "by default
 let g:ale_fix_on_save = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_open_list = 0
+let g:ale_languagetool_options = '--disable COMMA_PARENTHESIS_WHITESPACE,WHITESPACE_RULE,UPPERCASE_SENTENCE_START,LC_AFTER_PERIOD,FILE_EXTENSIONS_CASE,ARROWS,EN_UNPAIRED_BRACKETS,UNLIKELY_OPENING_PUNCTUATION,UNIT_SPACE,ENGLISH_WORD_REPEAT_BEGINNING_RULE,CURRENCY,REP_PASSIVE_VOICE,EN_UNPAIRED_QUOTES'
+let g:ale_sign_column_always = 1
+let g:ale_sign_info = '🛈'
+let g:ale_sign_error = '⛔'
+let g:ale_sign_warning = '⚠️'
+let g:ale_virtualtext_cursor = 2
+let g:ale_virtualtext_prefix = '☢️ '
+let g:coc_start_at_startup = 0
 let g:coc_global_extensions = [
 	\ 'coc-python',
 	\ 'coc-sh',
 	\ 'coc-vimtex',
 	\ ]
+
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/snips/']
 
 if !empty(globpath(&runtimepath, 'autoload/plug.vim'))
@@ -58,20 +74,36 @@ endif
 set linebreak
 set breakindent
 
+set colorcolumn=+1
+set textwidth=80
+
 set number
+set numberwidth=3
 set relativenumber
-" set spell
+set signcolumn=yes " avoid ale from changing text position all the time
+set cursorline
+if exists('+cursorlineopt')
+  set cursorlineopt=number
+endif
+set spell
+set spelllang=en
+set history=50 "keep 50 lines of command line history
 set incsearch " search tweaks
 set hlsearch
+set list " shows whitespace characters
+set listchars=tab:\|\ ,trail:_
 set hidden "allow hiding a buffer
+set ruler
+set scrolloff=5
+set shell =/bin/fish
+set showbreak=_
 set ignorecase
 set smartcase
 set mouse+=a "mouse enabled
 set noshowmode "apparently I do not this with airline
-
-" }}}
-" Disable the default Vim startup message.
-set shortmess+=I
+set shortmess=aItTCF
+set t_Co=256 "number of colors
+set updatetime=100
 
 
 " Always show the status line at the bottom, even if you only have one window open.
