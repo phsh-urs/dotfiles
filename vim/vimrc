@@ -37,7 +37,9 @@ let g:python_highlight_all = 1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 2
 let g:detectindent_preferred_when_mixed = 1
+
 let g:airline_theme='wombat'
+let g:airline_powerline_fonts = 1
 
 "ALE + CoC
 let g:ale_echo_msg_error_str = 'E'
